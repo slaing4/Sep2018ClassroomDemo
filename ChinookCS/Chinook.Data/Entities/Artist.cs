@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Chinook.Data
+namespace Chinook.Data.Entities
 {
-    public class Class1
+    public class Artist
     {
     }
 }
