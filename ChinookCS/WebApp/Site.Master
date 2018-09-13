@@ -82,8 +82,12 @@
                         DynamicMenuStyle-BackColor="Black">
                         
                         <asp:MenuItem Text="Home" NavigateUrl="~/"></asp:MenuItem>
+                        <asp:MenuItem Text="ODS">
+                            <asp:MenuItem Text="ODS Query" NavigateUrl="~/SamlePages/ODSQuery.aspx"></asp:MenuItem>
+                        </asp:MenuItem>
                         <asp:MenuItem Text="Contact" NavigateUrl="~/Contact.aspx"></asp:MenuItem>
                         <asp:MenuItem Text="About" NavigateUrl="~/About.aspx"></asp:MenuItem>
+
 
                     </asp:Menu>
 
