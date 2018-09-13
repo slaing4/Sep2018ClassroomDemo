@@ -4,21 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-#region Additonal Namespaces
+#region Additional Namespaces
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 #endregion
-
-
 namespace Chinook.Data.Entities
 {
     [Table("Artists")]
     public class Artist
     {
-        [Key, Column(Order = 1)]
+        [Key]
         public int ArtistId { get; set; }
-        [Required(ErrorMessage ="Name is a required feild")]
-        [StringLength(120, ErrorMessage = "Maximum Length 120 charatcers")]
+        [Required(ErrorMessage = "Name is required.")]
+        [StringLength(120,ErrorMessage ="Name is limited to 120 characters")]
         public string Name { get; set; }
     }
 }

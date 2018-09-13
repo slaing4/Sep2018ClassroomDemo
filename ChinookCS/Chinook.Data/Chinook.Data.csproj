@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D934AC71-2ACB-4D1E-A5B0-DDBB70035D97}</ProjectGuid>
+    <ProjectGuid>{70665F34-1E3B-4176-A5AA-D769672E12C4}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Chinook.Data</RootNamespace>
@@ -51,6 +51,7 @@
     <Compile Include="Entities\Artist.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />

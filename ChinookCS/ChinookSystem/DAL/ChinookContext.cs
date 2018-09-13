@@ -5,15 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 
 #region Additional Namespaces
-using System.Runtime.Remoting.Contexts;
+using System.Data.Entity;
 using Chinook.Data.Entities;
 #endregion
 
 namespace ChinookSystem.DAL
 {
-    internal class ChinookContext:Context
+    internal class ChinookContext:DbContext
     {
-        public ChinookContext() : base("ChinookDB")
+        public ChinookContext():base("ChinookDB")
         {
 
         }
