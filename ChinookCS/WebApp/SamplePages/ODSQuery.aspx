@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="ODS Query" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ODSQuery.aspx.cs" Inherits="WebApp.SamplePages.ODSQuery" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
+    <h1>ODS GridView</h1>
     
 
     <asp:Label ID="SelectArtistLabel" runat="server" Text="Select an artist"></asp:Label>
