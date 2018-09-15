@@ -12,14 +12,42 @@
     
     <br />
     <br />
+    
+    <!--Bind("xxx") is both input and output, Eval is output only -->
 
     <asp:GridView ID="AlbumList" runat="server" AutoGenerateColumns="False" DataSourceID="AlbumListODS">
         <Columns>
-            <asp:BoundField DataField="AlbumId" HeaderText="AlbumId" SortExpression="AlbumId"></asp:BoundField>
-            <asp:BoundField DataField="Title" HeaderText="Title" SortExpression="Title"></asp:BoundField>
-            <asp:BoundField DataField="ArtistId" HeaderText="ArtistId" SortExpression="ArtistId"></asp:BoundField>
-            <asp:BoundField DataField="ReleaseYear" HeaderText="ReleaseYear" SortExpression="ReleaseYear"></asp:BoundField>
-            <asp:BoundField DataField="ReleaseLabel" HeaderText="ReleaseLabel" SortExpression="ReleaseLabel"></asp:BoundField>
+            <asp:TemplateField HeaderText="AlbumId" SortExpression="AlbumId">
+               
+                <ItemTemplate>
+                    <asp:Label runat="server" Text='<%# Eval("AlbumId") %>' ID="Label2"></asp:Label>
+                </ItemTemplate>
+            </asp:TemplateField>
+            <asp:TemplateField HeaderText="Title" SortExpression="Title">
+                
+                <ItemTemplate>
+                    <asp:Label runat="server" Text='<%# Eval("Title") %>' ID="Label1"></asp:Label>
+                </ItemTemplate>
+            </asp:TemplateField>
+            <asp:TemplateField HeaderText="ArtistId" SortExpression="ArtistId">
+                
+                <ItemTemplate>
+                    <asp:Label runat="server" Text='<%# Eval("ArtistId") %>' ID="Label3"></asp:Label>
+                </ItemTemplate>
+            </asp:TemplateField>
+            <asp:TemplateField HeaderText="ReleaseYear" SortExpression="ReleaseYear">
+                
+                <ItemTemplate>
+                    <asp:Label runat="server" Text='<%# Eval("ReleaseYear") %>' ID="Label4"></asp:Label>
+                </ItemTemplate>
+            </asp:TemplateField>
+            <asp:TemplateField HeaderText="ReleaseLabel" SortExpression="ReleaseLabel">
+                
+                <ItemTemplate>
+                    <asp:Label runat="server" Text='<%# Eval("ReleaseLabel") %>' ID="Label5"></asp:Label>
+                </ItemTemplate>
+            </asp:TemplateField>
+
         </Columns>
     </asp:GridView>
 
