@@ -33,6 +33,20 @@ namespace ChinookSystem.BLL
             }
         }
 
+        //Get the album(s) by feeding an artist id, uses Linq
+        [DataObjectMethod(DataObjectMethodType.Select, false)]
+        public List<Album> Album_GetByArtistId(int artistid)
+        {
+            using (var context = new ChinookContext())
+            {
+                var results = from aRowOn in context.Albums
+                              where aRowOn.ArtistId.Equals(artistid)
+                              select aRowOn;
+
+
+                return results.ToList();
+            }
+        }
 
     }
 }
