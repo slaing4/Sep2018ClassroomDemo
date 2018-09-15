@@ -57,7 +57,11 @@
 
     <asp:ObjectDataSource ID="ArtistListODS" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="Artist_List" TypeName="ChinookSystem.BLL.ArtistController"></asp:ObjectDataSource>
     
-    <asp:ObjectDataSource ID="AlbumListODS" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="List_Albums" TypeName="ChinookSystem.BLL.AlbumController"></asp:ObjectDataSource>
+    <asp:ObjectDataSource ID="AlbumListODS" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="Album_GetByArtistId" TypeName="ChinookSystem.BLL.AlbumController">
+        <SelectParameters>
+            <asp:Parameter Name="artistid" Type="Int32"></asp:Parameter>
+        </SelectParameters>
+    </asp:ObjectDataSource>
 
 
 
