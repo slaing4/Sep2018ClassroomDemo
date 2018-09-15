@@ -32,7 +32,10 @@
             <asp:TemplateField HeaderText="ArtistId" SortExpression="ArtistId">
                 
                 <ItemTemplate>
-                    <asp:Label runat="server" Text='<%# Eval("ArtistId") %>' ID="Label3"></asp:Label>
+                    <!--<asp:Label runat="server" Text='<//%# Eval("ArtistId") %>' ID="Label3"></asp:Label>-->
+                    <asp:DropDownList ID="AlbumArtistList" runat="server" DataSourceID="ArtistListODS" DataTextField="ArtistId" DataValueField="Name" selectedValue="<%# Eval("ArtistId") %>" ></asp:DropDownList>
+
+
                 </ItemTemplate>
             </asp:TemplateField>
             <asp:TemplateField HeaderText="ReleaseYear" SortExpression="ReleaseYear">
