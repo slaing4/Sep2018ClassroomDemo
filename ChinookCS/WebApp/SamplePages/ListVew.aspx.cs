@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace WebApp.SamplePages
 {
-    public partial class QueryListView : System.Web.UI.Page
+    public partial class ListVew : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

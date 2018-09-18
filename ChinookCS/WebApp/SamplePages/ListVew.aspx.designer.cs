@@ -10,7 +10,7 @@
 namespace WebApp.SamplePages {
     
     
-    public partial class QueryListView {
+    public partial class ListVew {
         
         /// <summary>
         /// SelectArtistLabel control.
@@ -40,13 +40,13 @@ namespace WebApp.SamplePages {
         protected global::System.Web.UI.WebControls.LinkButton FetchArtist;
         
         /// <summary>
-        /// AlbumList control.
+        /// AlbumListView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView AlbumList;
+        protected global::System.Web.UI.WebControls.ListView AlbumListView;
         
         /// <summary>
         /// ArtistListODS control.
