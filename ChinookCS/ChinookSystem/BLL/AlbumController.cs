@@ -17,7 +17,7 @@ namespace ChinookSystem.BLL
     {
         [DataObjectMethod(DataObjectMethodType.Select, false)]
         public List<Album> List_Albums()
-        {
+        {//nugets
             using (var context = new ChinookContext())
             {
                 return context.Albums.ToList();
