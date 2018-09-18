@@ -17,7 +17,7 @@ namespace ChinookSystem.BLL
     {
         [DataObjectMethod(DataObjectMethodType.Select, false)]
         public List<Album> List_Albums()
-        {//nugets
+        {
             using (var context = new ChinookContext())
             {
                 return context.Albums.ToList();
@@ -47,6 +47,23 @@ namespace ChinookSystem.BLL
                 return results.ToList();
             }
         }
+
+
+
+
+        [DataObjectMethod(DataObjectMethodType.Insert, false)]
+        public int Album_Add(Album item)
+        {
+            using(var context = new ChinookContext())
+            {
+                item = context.Albums.Add(item);
+                context.SaveChanges();
+                return item.AlbumId;
+
+
+            }
+        }
+
 
     }
 }
