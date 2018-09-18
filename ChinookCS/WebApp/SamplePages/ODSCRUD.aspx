@@ -10,7 +10,7 @@
                     <asp:Button runat="server" CommandName="Edit" Text="Edit" ID="EditButton" />
                 </td>
                 <td>
-                    <asp:Label Text='<%# Eval("AlbumId") %>' runat="server" ID="AlbumIdLabel" /></td>
+                    <asp:Label Text='<%# Eval("AlbumId") %>' runat="server" ID="AlbumIdLabel"  Enabled="false" Width="50px"/></td>
                 <td>
                     <asp:Label Text='<%# Eval("Title") %>' runat="server" ID="TitleLabel" /></td>
                 <td>
@@ -19,7 +19,6 @@
                     <asp:Label Text='<%# Eval("ReleaseYear") %>' runat="server" ID="ReleaseYearLabel" /></td>
                 <td>
                     <asp:Label Text='<%# Eval("ReleaseLabel") %>' runat="server" ID="ReleaseLabelLabel" /></td>
-                
             </tr>
         </AlternatingItemTemplate>
         <EditItemTemplate>
@@ -29,7 +28,7 @@
                     <asp:Button runat="server" CommandName="Cancel" Text="Cancel" ID="CancelButton" />
                 </td>
                 <td>
-                    <asp:TextBox Text='<%# Bind("AlbumId") %>' runat="server" ID="AlbumIdTextBox" /></td>
+                    <asp:TextBox Text='<%# Bind("AlbumId") %>' runat="server" ID="AlbumIdTextBox" Enabled="false" Width="50px"/></td>
                 <td>
                     <asp:TextBox Text='<%# Bind("Title") %>' runat="server" ID="TitleTextBox" /></td>
                 <td>
@@ -55,7 +54,7 @@
                     <asp:Button runat="server" CommandName="Cancel" Text="Clear" ID="CancelButton" />
                 </td>
                 <td>
-                    <asp:TextBox Text='<%# Bind("AlbumId") %>' runat="server" ID="AlbumIdTextBox" /></td>
+                    <asp:TextBox Text='<%# Bind("AlbumId") %>' runat="server" ID="AlbumIdTextBox" Enabled="false" Width="50px"/></td>
                 <td>
                     <asp:TextBox Text='<%# Bind("Title") %>' runat="server" ID="TitleTextBox" /></td>
                 <td>
@@ -74,7 +73,7 @@
                     <asp:Button runat="server" CommandName="Edit" Text="Edit" ID="EditButton" />
                 </td>
                 <td>
-                    <asp:Label Text='<%# Eval("AlbumId") %>' runat="server" ID="AlbumIdLabel" /></td>
+                    <asp:Label Text='<%# Eval("AlbumId") %>' runat="server" ID="AlbumIdLabel" Enabled="false" Width="50px"/></td>
                 <td>
                     <asp:Label Text='<%# Eval("Title") %>' runat="server" ID="TitleLabel" /></td>
                 <td>
@@ -83,7 +82,6 @@
                     <asp:Label Text='<%# Eval("ReleaseYear") %>' runat="server" ID="ReleaseYearLabel" /></td>
                 <td>
                     <asp:Label Text='<%# Eval("ReleaseLabel") %>' runat="server" ID="ReleaseLabelLabel" /></td>
-                
             </tr>
         </ItemTemplate>
         <LayoutTemplate>
@@ -122,7 +120,7 @@
                     <asp:Button runat="server" CommandName="Edit" Text="Edit" ID="EditButton" />
                 </td>
                 <td>
-                    <asp:Label Text='<%# Eval("AlbumId") %>' runat="server" ID="AlbumIdLabel" /></td>
+                    <asp:Label Text='<%# Eval("AlbumId") %>' runat="server" ID="AlbumIdLabel" Enabled="false" Width="50px"/></td>
                 <td>
                     <asp:Label Text='<%# Eval("Title") %>' runat="server" ID="TitleLabel" /></td>
                 <td>
