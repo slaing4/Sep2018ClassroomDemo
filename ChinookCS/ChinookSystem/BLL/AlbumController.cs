@@ -64,6 +64,21 @@ namespace ChinookSystem.BLL
             }
         }
 
+        [DataObjectMethod(DataObjectMethodType.Update, false)]
+        public int Album_Update(Album item)
+        {
+            using (var context = new ChinookContext())
+            {
+                item.ReleaseLabel = string.IsNullOrEmpty(item.ReleaseLabel) ? null : item.ReleaseLabel;
+                context.Entry(item).State = System.Data.Entity.EntityState.Modified;
+
+                return context.SaveChanges();
+
+
+            }
+        }
+
+
 
     }
 }
