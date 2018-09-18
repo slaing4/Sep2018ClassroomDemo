@@ -222,6 +222,7 @@
     </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="SamplePages\ListVew.aspx" />
+    <Content Include="SamplePages\ODSCRUD.aspx" />
     <Content Include="SamplePages\ODSQuery.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -400,6 +401,13 @@
     </Compile>
     <Compile Include="SamplePages\ListVew.aspx.designer.cs">
       <DependentUpon>ListVew.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SamplePages\ODSCRUD.aspx.cs">
+      <DependentUpon>ODSCRUD.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SamplePages\ODSCRUD.aspx.designer.cs">
+      <DependentUpon>ODSCRUD.aspx</DependentUpon>
     </Compile>
     <Compile Include="SamplePages\ODSQuery.aspx.cs">
       <DependentUpon>ODSQuery.aspx</DependentUpon>
