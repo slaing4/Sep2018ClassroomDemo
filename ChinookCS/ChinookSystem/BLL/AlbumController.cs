@@ -78,6 +78,26 @@ namespace ChinookSystem.BLL
             }
         }
 
+        [DataObjectMethod(DataObjectMethodType.Delete, false)]
+        public int Album_Delete(Album item)
+        {
+            return Album_Delete(item.AlbumId);
+        }
+
+        public int Album_Delete(int albumid)
+        {
+            using(var context = new ChinookContext())
+            {
+                var existing = context.Albums.Find(albumid);
+                if(existing == null)
+                {
+                    throw new Exception("Album does not exist on file");
+                }
+                context.Albums.Remove(existing);
+                return context.SaveChanges();
+            }
+        }
+
 
 
     }
