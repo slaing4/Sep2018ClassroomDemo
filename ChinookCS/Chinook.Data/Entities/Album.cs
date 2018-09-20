@@ -24,15 +24,8 @@ namespace Chinook.Data.Entities
         [StringLength(50, ErrorMessage = "Release Label is limited to 50 characters")]
         public string ReleaseLabel { get; set; }
 
-
-        //navigational properties - what is a navigational property?
-        //       Parent/child-Property name get set : Parent pointing
+        //navigational properties
         public virtual Artist Artist { get; set; }
-
         
-
-        //child pointing means its a collection and parent means its singular
-        //public virtual ICollection<Album> Albums { get; set; }
-
     }
 }

@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-#region Additional Namespace
+#region Additional Namespaces
 using Chinook.Data.Entities;
 using ChinookSystem.DAL;
-using System.ComponentModel;
+using System.ComponentModel;  //ODS
 #endregion
 
 namespace ChinookSystem.BLL
@@ -16,7 +16,7 @@ namespace ChinookSystem.BLL
     public class AlbumController
     {
         [DataObjectMethod(DataObjectMethodType.Select, false)]
-        public List<Album> List_Albums()
+        public List<Album> Album_List()
         {
             using (var context = new ChinookContext())
             {
@@ -27,13 +27,12 @@ namespace ChinookSystem.BLL
         [DataObjectMethod(DataObjectMethodType.Select, false)]
         public Album Album_Find(int albumid)
         {
-            using(var context = new ChinookContext())
+            using (var context = new ChinookContext())
             {
                 return context.Albums.Find(albumid);
             }
         }
 
-        //Get the album(s) by feeding an artist id, uses Linq
         [DataObjectMethod(DataObjectMethodType.Select, false)]
         public List<Album> Album_GetByArtistId(int artistid)
         {
@@ -42,25 +41,18 @@ namespace ChinookSystem.BLL
                 var results = from aRowOn in context.Albums
                               where aRowOn.ArtistId.Equals(artistid)
                               select aRowOn;
-
-
                 return results.ToList();
             }
         }
 
-
-
-
-        [DataObjectMethod(DataObjectMethodType.Insert, false)]
+        [DataObjectMethod(DataObjectMethodType.Insert,false)]
         public int Album_Add(Album item)
         {
-            using(var context = new ChinookContext())
+            using (var context = new ChinookContext())
             {
                 item = context.Albums.Add(item);
                 context.SaveChanges();
                 return item.AlbumId;
-
-
             }
         }
 
@@ -69,12 +61,10 @@ namespace ChinookSystem.BLL
         {
             using (var context = new ChinookContext())
             {
-                item.ReleaseLabel = string.IsNullOrEmpty(item.ReleaseLabel) ? null : item.ReleaseLabel;
+                item.ReleaseLabel = string.IsNullOrEmpty(item.ReleaseLabel) ? null :
+                    item.ReleaseLabel;
                 context.Entry(item).State = System.Data.Entity.EntityState.Modified;
-
                 return context.SaveChanges();
-
-
             }
         }
 
@@ -86,19 +76,17 @@ namespace ChinookSystem.BLL
 
         public int Album_Delete(int albumid)
         {
-            using(var context = new ChinookContext())
+            using (var context = new ChinookContext())
             {
                 var existing = context.Albums.Find(albumid);
-                if(existing == null)
+                if (existing == null)
                 {
-                    throw new Exception("Album does not exist on file");
+                    throw new Exception("Album does not exist on file.");
                 }
                 context.Albums.Remove(existing);
                 return context.SaveChanges();
             }
         }
-
-
-
     }
 }
+
