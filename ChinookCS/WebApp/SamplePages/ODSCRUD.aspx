@@ -1,4 +1,10 @@
 ﻿<%@ Page Title="ODS CRUD" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ODSCRUD.aspx.cs" Inherits="WebApp.SamplePages.ODSCRUD" %>
+
+<%@ Register Src="~/UserControls/MessageUserControl.ascx" TagPrefix="uc1" TagName="MessageUserControl" %>
+
+
+<uc1:MessageUserControl runat="server" id="MessageUserControl" />
+
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <h1>ODS CRUD</h1>
     <blockquote>
