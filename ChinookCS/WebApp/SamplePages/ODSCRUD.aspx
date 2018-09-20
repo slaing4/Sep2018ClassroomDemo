@@ -196,7 +196,8 @@
      <asp:ObjectDataSource ID="ArtistListODS" runat="server" 
         OldValuesParameterFormatString="original_{0}" 
         SelectMethod="Artist_List" 
-        TypeName="ChinookSystem.BLL.ArtistController">
+        TypeName="ChinookSystem.BLL.ArtistController"
+         OnSelect="CheckForException">
     </asp:ObjectDataSource>
     <asp:ObjectDataSource ID="AlbumListODS" runat="server" 
         DataObjectTypeName="Chinook.Data.Entities.Album" 
@@ -205,7 +206,11 @@
         SelectMethod="Album_List"
         UpdateMethod="Album_Update"
         OldValuesParameterFormatString="original_{0}" 
-        TypeName="ChinookSystem.BLL.AlbumController" 
+        TypeName="ChinookSystem.BLL.AlbumController"
+        OnDeleted="CheckForExceptions" 
+        OnInserted="CheckForExceptions"
+        OnSelected="CheckForExceptions"
+        OnUpdated="CheckForException"
         >
 
     </asp:ObjectDataSource>
