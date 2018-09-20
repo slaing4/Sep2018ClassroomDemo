@@ -89,6 +89,8 @@
                                 </asp:MenuItem>
                                  <asp:MenuItem Text="ODS CRUD" NavigateUrl="~/SamplePages/ODSCRUD.aspx">
                                 </asp:MenuItem>
+                                 <asp:MenuItem Text="Album Details" NavigateUrl="~/SamplePages/AlbumDetails.aspx">
+                                </asp:MenuItem>
                             </asp:MenuItem>
 
                             <asp:MenuItem Text="Contact" NavigateUrl="~/Contact.aspx"></asp:MenuItem>
