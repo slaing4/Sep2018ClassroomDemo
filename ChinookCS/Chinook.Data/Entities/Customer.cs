@@ -13,10 +13,10 @@ namespace Chinook.Data.Entities
         {
             Invoices = new HashSet<Invoice>();
         }
-
+        [Key]
         public int CustomerId { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Title is a required field")]
         [StringLength(40)]
         public string FirstName { get; set; }
 
