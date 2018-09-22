@@ -1,9 +1,13 @@
-namespace Chinook.Data.Entities
+namespace ChinookSystem.DAL
 {
     using System;
     using System.Data.Entity;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
+
+    #region  AdditionalNamespaces
+    using Chinook.Data.Entities;
+    #endregion
 
     public partial class ChinookContext : DbContext
     {
