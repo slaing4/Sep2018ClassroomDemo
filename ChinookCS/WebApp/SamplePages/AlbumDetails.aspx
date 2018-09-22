@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AlbumDetails.aspx.cs" Inherits="WebApp.SamplePages.AlbumDetails" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <h3>Passing Data</h3>
+    <h3>Accessing Data and grid view</h3>
     <asp:Label ID="Label1" runat="server" 
         Text="Select Album: "></asp:Label>
     &nbsp;&nbsp;
@@ -142,4 +142,24 @@
         <asp:Label ID="Label6" runat="server" Text="Column : "></asp:Label>&nbsp;&nbsp;
         <asp:Label ID="ColumnID" runat="server" ></asp:Label>
     </div>
+
+    <div class="row">
+    <asp:GridView ID="TrackOfAlbums" runat="server" DataSourceID="AlbumTrackODS" AutoGenerateColumns="False" AllowPaging="True">
+        <Columns>
+            <asp:TemplateField HeaderText="ID"></asp:TemplateField>
+            <asp:TemplateField HeaderText="Name"></asp:TemplateField>
+            <asp:TemplateField HeaderText="Artist"></asp:TemplateField>
+            <asp:TemplateField HeaderText="Media"></asp:TemplateField>
+            <asp:TemplateField HeaderText="Genre"></asp:TemplateField>
+            <asp:TemplateField HeaderText="Composer"></asp:TemplateField>
+            <asp:TemplateField HeaderText="Size"></asp:TemplateField>
+            <asp:TemplateField HeaderText="Time (MS)"></asp:TemplateField>
+            <asp:TemplateField HeaderText="Price"></asp:TemplateField>
+            <asp:CommandField SelectText="View" ShowSelectButton="True" ButtonType="Button"></asp:CommandField>
+        </Columns>
+    </asp:GridView>
+    </div>
+
+
+
 </asp:Content>
