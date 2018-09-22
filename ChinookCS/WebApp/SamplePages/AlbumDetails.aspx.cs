@@ -20,7 +20,7 @@ namespace WebApp.SamplePages
             // listview row
             // The property that you need to access is
             //  CommandArgument
-            // It is NOT a string
+            // CommandArgument is NOT a string therefore it needs to be cast to a string
             CommandArgID.Text = e.CommandArgument.ToString();
 
             //extract a value from a column on the listview item (row)
@@ -41,6 +41,11 @@ namespace WebApp.SamplePages
 
             TracksTime.Text = time.ToString();
             TracksSize.Text = size.ToString();
+        }
+
+        protected void FetchDetails_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

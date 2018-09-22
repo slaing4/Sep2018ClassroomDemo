@@ -18,6 +18,5 @@ namespace WebApp.SamplePages
         {
             MessageUserControl.HandleDataBoundException(e);
         }
-
     }
 }

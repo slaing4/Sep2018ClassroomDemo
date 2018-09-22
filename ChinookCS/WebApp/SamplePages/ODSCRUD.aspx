@@ -2,9 +2,6 @@
 
 <%@ Register Src="~/UserControls/MessageUserControl.ascx" TagPrefix="uc1" TagName="MessageUserControl" %>
 
-
-<uc1:MessageUserControl runat="server" id="MessageUserControl" />
-
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <h1>ODS CRUD</h1>
     <blockquote>
@@ -15,6 +12,8 @@
         Listview set of attributes the DataKeyNames. This is set to the primary key attribute
         of the entity.
     </blockquote>
+    <uc1:MessageUserControl runat="server" ID="MessageUserControl" />
+
     <asp:ListView ID="AlbumList" runat="server" DataSourceID="AlbumListODS" 
         InsertItemPosition="LastItem" DataKeyNames="AlbumId">
         <AlternatingItemTemplate>
@@ -197,7 +196,7 @@
         OldValuesParameterFormatString="original_{0}" 
         SelectMethod="Artist_List" 
         TypeName="ChinookSystem.BLL.ArtistController"
-         OnSelect="CheckForException">
+          OnSelected="CheckForException">
     </asp:ObjectDataSource>
     <asp:ObjectDataSource ID="AlbumListODS" runat="server" 
         DataObjectTypeName="Chinook.Data.Entities.Album" 
@@ -206,12 +205,11 @@
         SelectMethod="Album_List"
         UpdateMethod="Album_Update"
         OldValuesParameterFormatString="original_{0}" 
-        TypeName="ChinookSystem.BLL.AlbumController"
-        OnDeleted="CheckForExceptions" 
-        OnInserted="CheckForExceptions"
-        OnSelected="CheckForExceptions"
-        OnUpdated="CheckForException"
-        >
+        TypeName="ChinookSystem.BLL.AlbumController" 
+        OnDeleted="CheckForException"
+         OnInserted="CheckForException"
+         OnSelected="CheckForException"
+         OnUpdated="CheckForException">
 
     </asp:ObjectDataSource>
 </asp:Content>
