@@ -1,11 +1,12 @@
-namespace Chinook.Data.Entities
-{
+
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
+namespace Chinook.Data.Entities
+{
     public partial class Album
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -16,8 +17,8 @@ namespace Chinook.Data.Entities
 
         public int AlbumId { get; set; }
 
-        [Required]
-        [StringLength(160)]
+        [Required(ErrorMessage ="Title is a required field")]
+        [StringLength(160, ErrorMessage ="Title is limited to 160 characters.")]
         public string Title { get; set; }
 
         public int ArtistId { get; set; }

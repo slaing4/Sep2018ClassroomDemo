@@ -13,10 +13,10 @@ namespace Chinook.Data.Entities
         {
             Invoices = new HashSet<Invoice>();
         }
-        [Key]
+
         public int CustomerId { get; set; }
 
-        [Required(ErrorMessage = "Title is a required field")]
+        [Required]
         [StringLength(40)]
         public string FirstName { get; set; }
 
@@ -58,7 +58,5 @@ namespace Chinook.Data.Entities
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Invoice> Invoices { get; set; }
-
-        public string FullName { get { return FirstName + ", " + LastName; } }
     }
 }
