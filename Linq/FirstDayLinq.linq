@@ -10,5 +10,5 @@
 //query syntax
 from rowPlaceholder in Albums
 where rowPlaceholder.ArtistId.Equals("22")
-orderby rowPlaceholder.ReleaseYear
+orderby rowPlaceholder.ReleaseYear, rowPlaceholder.Title descending
 select rowPlaceholder
