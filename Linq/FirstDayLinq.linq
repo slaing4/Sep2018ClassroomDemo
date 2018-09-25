@@ -24,4 +24,15 @@ select new
 	Title = x.Title,
 	Year = x.ReleaseYear
 }
-	
+
+//list albums for u2 showing album and release orderby release year
+
+from x in Albums
+where x.Artist.Name.Contains("U2")
+orderby x.ReleaseYear
+select new 
+{
+	Artist = x.Artist.Name,
+	Year = x.ReleaseYear,
+	Album = x.Title
+}
