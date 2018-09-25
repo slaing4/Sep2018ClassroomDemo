@@ -7,7 +7,21 @@
   </Connection>
 </Query>
 
+from x in Customers
+where x.Country.Equals("USA") &&
+	x.Email.Contains("yahoo")
+	select new
+	{
+		FullName = x.LastName + ", " + x.FirstName
+	}
+	
+	
+
 from x in Albums
-where x.ReleaseYear >= 2007 &&
-      x.ReleaseYear <= 2010
-select x
+orderby x.Title
+select new
+{
+	Title = x.Title,
+	Year = x.ReleaseYear
+}
+	
