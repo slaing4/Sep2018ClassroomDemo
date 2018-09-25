@@ -7,8 +7,7 @@
   </Connection>
 </Query>
 
-//query syntax
-from rowPlaceholder in Albums
-where rowPlaceholder.ArtistId.Equals("22")
-orderby rowPlaceholder.ReleaseYear, rowPlaceholder.Title descending
-select rowPlaceholder
+from x in Albums
+where x.ReleaseYear >= 2007 &&
+      x.ReleaseYear <= 2010
+select x
