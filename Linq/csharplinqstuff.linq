@@ -19,3 +19,4 @@ select new
 	Artist = x.Artist.Name,
 	Year = x.ReleaseYear
 };
+results.Dump();
