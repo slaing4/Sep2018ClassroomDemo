@@ -62,5 +62,10 @@ var results4 = from x in Tracks
 	};
 results4.Dump();
 
+//Aggregates
+//.Sum(), .Count(), Min(), .Max(), .Average()
+//aggregates must be done against a collection of 0,1 or more rows
+
+
 	
 resultaverage.Dump();
