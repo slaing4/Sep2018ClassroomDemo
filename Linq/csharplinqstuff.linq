@@ -74,6 +74,13 @@ var results5 = from x in Albums
 	};
 results5.Dump();
 
-
+//create a list of artist with their album counts
+//ordered descending album count
+var results6 = from x in Artists
+	orderby x.Albums.Count() descending
+	select new {
+		Name = x.Name,
+		Count = x.Albums.Count()
+	};
 	
-resultaverage.Dump();
+results6.Dump();
