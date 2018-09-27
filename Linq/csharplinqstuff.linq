@@ -52,3 +52,15 @@ var resultaverage = (from x in Tracks
 	select x.Milliseconds).Average();
 	
 resultaverage.Dump();
+
+var results4 = from x in Tracks
+	select new
+	{
+		Song = x.Name,
+		Length = x.Milliseconds > resultaverage ? "Long" :
+			(x.Milliseconds < resultaverage ? "Short" : "Average")
+	};
+results4.Dump();
+
+	
+resultaverage.Dump();
