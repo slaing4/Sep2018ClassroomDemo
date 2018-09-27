@@ -20,3 +20,16 @@ select new
 	Year = x.ReleaseYear
 };
 results.Dump();
+
+
+//ternary operator
+//conditions(s) ? true value : false value
+var results2 = from x in Albums
+	orderby x.ReleaseLabel
+	select new
+	{
+		Title = x.Title,
+		Label = x.ReleaseLabel == null ? "Unknown" : 
+				x.ReleaseLabel
+	};
+results2.Dump();
