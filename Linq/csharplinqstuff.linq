@@ -25,7 +25,7 @@ results.Dump();
 //ternary operator
 //conditions(s) ? true value : false value
 var results2 = from x in Albums
-	orderby x.ReleaseLabel
+	orderby x.ReleaseYear
 	select new
 	{
 		Title = x.Title,
@@ -33,3 +33,17 @@ var results2 = from x in Albums
 				x.ReleaseLabel
 	};
 results2.Dump();
+
+// a list of albums show the title and decade of release. Albums from 1970 to 79 are 70s;
+var results3 = from x in Albums
+orderby x.ReleaseYear
+select new
+{
+	Title = x.Title,
+	Decade = x.ReleaseYear >= 1970 && x.ReleaseYear <= 1979 ? "70s" :
+			(x.ReleaseYear >= 1980 && x.ReleaseYear <= 1989 ? "80s" : 
+				(x.ReleaseYear >= 1990 && x.ReleaseYear <= 1999 ? "90s" : "Modern")
+			) 
+};
+
+results3.Dump();
