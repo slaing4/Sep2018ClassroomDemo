@@ -65,6 +65,14 @@ results4.Dump();
 //Aggregates
 //.Sum(), .Count(), Min(), .Max(), .Average()
 //aggregates must be done against a collection of 0,1 or more rows
+var results5 = from x in Albums
+	select new
+	{
+		Title = x.Title,
+		Artist = x.Artist.Name,
+		TrackCount = x.Tracks.Count()
+	};
+results5.Dump();
 
 
 	
