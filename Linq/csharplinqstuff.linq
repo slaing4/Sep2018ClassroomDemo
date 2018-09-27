@@ -47,3 +47,8 @@ select new
 };
 
 results3.Dump(); 
+
+var resultaverage = (from x in Tracks
+	select x.Milliseconds).Average();
+	
+resultaverage.Dump();
