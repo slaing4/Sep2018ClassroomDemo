@@ -8,7 +8,9 @@
         DataSourceID="AlbumIDArgODS" 
         DataTextField="Title" 
         DataValueField="AlbumId"></asp:DropDownList>
+    
     <asp:LinkButton ID="FetchDetails" runat="server" OnClick="FetchDetails_Click">Fetch Details</asp:LinkButton>
+
     <asp:ObjectDataSource ID="AlbumIDArgODS" runat="server" 
         OldValuesParameterFormatString="original_{0}" 
         SelectMethod="Album_List" 

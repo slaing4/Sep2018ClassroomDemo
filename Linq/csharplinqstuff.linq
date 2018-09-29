@@ -122,6 +122,22 @@ var tracksinfo = from x in Albums
 tracksinfo.Dump();
 
 
+//list all the Playlists which have a least one track
+//show the playlist name, number of tracks, cost and total storage size
+
+var playlists = from x in Playlists
+	where x.PlaylistTracks.Count() > 0
+	select new
+	{
+		Name = x.Name,
+		NumberOfTracks = x.PlaylistTracks.Count(),
+		Cost = x.PlaylistTracks.Sum(y => y.Track.UnitPrice),
+		Storage = x.PlaylistTracks.Sum(y => y.Track.Bytes/1000)
+		};
+playlists.Dump();
+				
+
+
 
 
 
