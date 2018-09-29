@@ -84,3 +84,9 @@ var results6 = from x in Artists
 	};
 	
 results6.Dump();
+
+
+//find max number of albums for all artists? idk what that even means though? like who has the most?
+var results7 = from x in Artists
+	select x.Albums.Count();
+results7.Dump();
