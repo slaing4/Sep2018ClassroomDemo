@@ -115,9 +115,10 @@ var tracksinfo = from x in Albums
 					NumberOfTracks = (from y in x.Tracks select y).Count(),
 					methodNumberOfTracks = x.Tracks.Count(),//seems easier
 					Cost = x.Tracks.Sum(y => y.UnitPrice),//
-					
-				}
-;
+					LongestTrack = x.Tracks.Max(y => y.Milliseconds),
+					ShortestTrack = x.Tracks.Min(y => y.Milliseconds),
+					AverageTrack = x.Tracks.Average(y => y.Milliseconds)				
+				};
 tracksinfo.Dump();
 
 
