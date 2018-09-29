@@ -103,4 +103,24 @@ var results7c = from x in Artists
 results7c.Dump();
 
 
+//prodcuce a list of albums which have tracks showing their title artists number of tracks on album,  total price of
+//all tracks, longest track, shortest track, and average track.
+
+var tracksinfo = from x in Albums
+				where x.Tracks.Count() > 0
+				select new
+				{
+					Title = x.Title,
+					Artsit = x.Artist.Name,
+					NumberOfTracks = (from y in x.Tracks select y).Count(),
+					methodNumberOfTracks = x.Tracks.Count(),//seems easier
+					Cost = x.Tracks.Sum(y => y.UnitPrice),//
+					
+				}
+;
+tracksinfo.Dump();
+
+
+
+
 
