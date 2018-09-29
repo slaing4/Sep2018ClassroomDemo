@@ -94,3 +94,13 @@ results7.Dump();
 var results7b = from x in Artists
 	where x.Albums.Count() == results7
 	select x;
+results7b.Dump();
+results7.Dump();
+
+var results7c = from x in Artists
+	where x.Albums.Count() == (from y in Artists select y.Albums.Count()).Max()
+	select x;
+results7c.Dump();
+
+
+
