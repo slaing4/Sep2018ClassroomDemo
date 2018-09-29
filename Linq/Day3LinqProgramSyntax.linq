@@ -11,14 +11,21 @@ void Main()
 {
 	var playlists = from x in Playlists
 		where x.PlaylistTracks.Count() > 0
-		select new
+		select new PlaylistSummary
 		{
-			Name = x.Name,
-			NumberOfTracks = x.PlaylistTracks.Count(),
-			Cost = x.PlaylistTracks.Sum(y => y.Track.UnitPrice),
-			Storage = x.PlaylistTracks.Sum(y => y.Track.Bytes/1000)
+			name = x.Name,
+			trackcount = x.PlaylistTracks.Count(),
+			cost = x.PlaylistTracks.Sum(y => y.Track.UnitPrice),
+			storage = x.PlaylistTracks.Sum(y => y.Track.Bytes/1000)
 			};
 	playlists.Dump();
 }
 
 // Define other methods and classes here
+public class PlaylistSummary
+{
+	public string name {get;set;}
+	public int trackcount {get;set;}
+	public decimal cost {get;set;}
+	public double? storage {get;set;} // nullable
+}
