@@ -1,6 +1,6 @@
 <Query Kind="Program">
   <Connection>
-    <ID>ba087d1f-172a-4f3d-9784-ef06bb5cbe1e</ID>
+    <ID>52188365-4973-4deb-aeed-448e694d44d8</ID>
     <Persist>true</Persist>
     <Server>.</Server>
     <Database>Chinook</Database>
@@ -45,6 +45,40 @@ public class AnAlbum
 	public string title{get;set;}
 	public List<Song> songs{get;set;}
 }
+
+
+
+//list of employees and the clients they support
+
+var employeelist = from x in Employees
+					where x.Title.Contains("Support")
+					orderby x.LastName, x.FirstName
+					select new 
+					{
+						Name = x.LastName + ", " + x.FirstName,
+						ClientCount = x.SupportRepIdCustomers.Count(),
+						ClientList = from y in x.SupportRepIdCustomers
+										orderby y.LastName, y.FirstName
+										select new {
+											lastname = y.LastName,
+											firstname = y.FirstName,
+											Phone = y.Phone
+										}
+						
+					};
+		
+employeelist.Dump();
+
+
+
+
+
+
+
+
+
+
+
 
 
 
