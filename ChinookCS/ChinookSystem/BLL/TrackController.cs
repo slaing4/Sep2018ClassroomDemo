@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 #region Additional Namespaces
 using Chinook.Data.Entities;
+using Chinook.Data.DTOs;
+using Chinook.Data.POCOs;
 using ChinookSystem.DAL;
-using System.ComponentModel;  //ODS
+using System.ComponentModel;
 #endregion
 
 namespace ChinookSystem.BLL
@@ -15,36 +17,19 @@ namespace ChinookSystem.BLL
     [DataObject]
     public class TrackController
     {
-        [DataObjectMethod(DataObjectMethodType.Select, false)]
-        public List<Track> Track_List()
+        [DataObjectMethod(DataObjectMethodType.Select,false)]
+        public List<TrackList> List_TracksForPlaylistSelection(string tracksby, int argid)
         {
             using (var context = new ChinookContext())
             {
-                return context.Tracks.ToList();
-            }
-        }
+                List<TrackList> results = null;
 
-        [DataObjectMethod(DataObjectMethodType.Select, false)]
-        public Track Track_Find(int trackid)
-        {
-            using (var context = new ChinookContext())
-            {
-                return context.Tracks.Find(trackid);
-            }
-        }
+               //code to go here
 
-        [DataObjectMethod(DataObjectMethodType.Select, false)]
-        public List<Track> Track_GetByAlbumId(int albumid)
-        {
-            using (var context = new ChinookContext())
-            {
-                var results = from aRowOn in context.Tracks
-                              where aRowOn.AlbumId.HasValue
-                              && aRowOn.AlbumId == albumid
-                              select aRowOn;
-                return results.ToList();
+                return results;
             }
-        }
-    }
+        }//eom
+
+       
+    }//eoc
 }
-
