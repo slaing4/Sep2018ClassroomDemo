@@ -1,38 +1,46 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ManagePlaylist.aspx.cs" Inherits="Jan2018DemoWebsite.SamplePages.ManagePlaylist" %>
 
-
+<%@ Register Src="~/UserControls/MessageUserControl.ascx" TagPrefix="uc1" TagName="MessageUserControl" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 <div>
     <h1>Manage Playlists (UX TRX Sample)</h1>
 </div>
-   
+    <uc1:MessageUserControl runat="server" ID="MessageUserControl" />
     <div class="row">
     <div class="col-sm-2">
         <asp:Label ID="Label1" runat="server" Text="Artist" ></asp:Label><br />
         <asp:DropDownList ID="ArtistDDL" runat="server"
-            Width="150px" >
+            Width="150px" DataSourceID="ArtistDLLODS" 
+            DataTextField="DisplayText" 
+            DataValueField="IDValueField">
         </asp:DropDownList><br />
         <asp:Button ID="ArtistFetch" runat="server" Text="Fetch" OnClick="ArtistFetch_Click"
               />
         <br /><br />
          <asp:Label ID="Label2" runat="server" Text="Media"></asp:Label><br />
         <asp:DropDownList ID="MediaTypeDDL" runat="server"
-            Width="150px">
+            Width="150px" DataSourceID="MediaTypeDDLODS" 
+            DataTextField="DisplayText" 
+            DataValueField="IDValueField">
         </asp:DropDownList><br />
         <asp:Button ID="MediaTypeFetch" runat="server" 
             Text="Fetch" OnClick="MediaTypeFetch_Click"  />
         <br /><br />
          <asp:Label ID="Label3" runat="server" Text="Genre"></asp:Label><br />
         <asp:DropDownList ID="GenreDDL" runat="server"
-            Width="150px" >
+            Width="150px" DataSourceID="GenreDDLODS" 
+            DataTextField="DisplayText" 
+            DataValueField="IDValueField">
         </asp:DropDownList><br />
         <asp:Button ID="GenreFetch" runat="server" Text="Fetch" OnClick="GenreFetch_Click" 
             />
         <br /><br />
          <asp:Label ID="Label4" runat="server" Text="Album"></asp:Label><br />
         <asp:DropDownList ID="AlbumDDL" runat="server"
-            Width="150px">
+            Width="150px" DataSourceID="AlbumDDLODS" 
+            DataTextField="DisplayText" 
+            DataValueField="IDValueField">
         </asp:DropDownList><br />
         <asp:Button ID="AlbumFetch" runat="server" Text="Fetch" OnClick="AlbumFetch_Click"
              />
@@ -212,7 +220,20 @@
     </div>
 
 </div>
-   
+    <asp:ObjectDataSource ID="ArtistDLLODS" runat="server" 
+        OldValuesParameterFormatString="original_{0}" 
+        SelectMethod="List_ArtistNames" 
+        TypeName="ChinookSystem.BLL.ArtistController"
+         OnSelected="CheckForException">
+    </asp:ObjectDataSource>
+
+    <asp:ObjectDataSource ID="AlbumDDLODS" runat="server" 
+        OldValuesParameterFormatString="original_{0}" 
+        SelectMethod="List_AlbumTitles" 
+        TypeName="ChinookSystem.BLL.AlbumController"
+         OnSelected="CheckForException">
+    </asp:ObjectDataSource>
+
     <asp:ObjectDataSource ID="MediaTypeDDLODS" runat="server" 
         OldValuesParameterFormatString="original_{0}" 
         SelectMethod="List_MediaTypeNames" 

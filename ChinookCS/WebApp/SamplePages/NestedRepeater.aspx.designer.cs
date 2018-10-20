@@ -13,21 +13,30 @@ namespace WebApp.SamplePages {
     public partial class NestedRepeater {
         
         /// <summary>
-        /// Repeater1 control.
+        /// MessageUserControl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater Repeater1;
+        protected global::DMIT2018Common.UserControls.MessageUserControl MessageUserControl;
         
         /// <summary>
-        /// ObjectDataSource1 control.
+        /// DTORepeater control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSource1;
+        protected global::System.Web.UI.WebControls.Repeater DTORepeater;
+        
+        /// <summary>
+        /// DTORepeaterODS control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ObjectDataSource DTORepeaterODS;
     }
 }

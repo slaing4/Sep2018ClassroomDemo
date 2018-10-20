@@ -19,7 +19,10 @@ namespace Jan2018DemoWebsite.SamplePages
             TracksSelectionList.DataSource = null;
         }
 
-       
+        protected void CheckForException(object sender, ObjectDataSourceStatusEventArgs e)
+        {
+            MessageUserControl.HandleDataBoundException(e);
+        }
 
         protected void ArtistFetch_Click(object sender, EventArgs e)
         {

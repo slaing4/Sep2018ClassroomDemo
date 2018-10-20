@@ -13,5 +13,11 @@ namespace WebApp.SamplePages
         {
 
         }
+        protected void CheckForException(object sender, ObjectDataSourceStatusEventArgs e)
+        {
+            //used to capture and handle errors from the
+            //ODS control
+            MessageUserControl.HandleDataBoundException(e);
+        }
     }
 }
