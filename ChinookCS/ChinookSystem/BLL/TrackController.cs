@@ -53,13 +53,15 @@ namespace ChinookSystem.BLL
         {
             using (var context = new ChinookContext())
             {
-                
+
 
                 var results = from x in context.Tracks
                               where (tracksby.Equals("Artist") && x.Album.ArtistId.Equals(argid))
                                || (tracksby.Equals("Genre") && x.GenreId.Equals(argid))
                                || (tracksby.Equals("MediaType") && x.MediaTypeId.Equals(argid))
                                || (tracksby.Equals("Album") && x.AlbumId.Equals(argid))
+                              where tracksby.Equals("Artists") ? x.Album.ArtistId == argid: 
+
                               select new TrackList
                               {
                                   TrackID = x.TrackId,
