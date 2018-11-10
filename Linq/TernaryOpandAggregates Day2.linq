@@ -1,6 +1,6 @@
 <Query Kind="Statements">
   <Connection>
-    <ID>ba087d1f-172a-4f3d-9784-ef06bb5cbe1e</ID>
+    <ID>52188365-4973-4deb-aeed-448e694d44d8</ID>
     <Persist>true</Persist>
     <Server>.</Server>
     <Database>Chinook</Database>
@@ -151,14 +151,3 @@ var results9 = from x in Playlists
 					storage = x.PlaylistTracks.Sum(plt => plt.Track.Bytes/1000.0)
 				};
 results9.Dump();
-
-
-
-
-
-
-
-
-
-
-
