@@ -36,7 +36,9 @@ namespace ChinookSystem.BLL
             }
         }
 
-        [DataObjectMethod(DataObjectMethodType.Select, false)]
+
+
+        [DataObjectMethod(DataObjectMethodType.Select, false)]              
         public List<SelectionList> List_ArtistNames()
         {
             using (var context = new ChinookContext())
