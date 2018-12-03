@@ -15,7 +15,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>WebApp</RootNamespace>
     <AssemblyName>WebApp</AssemblyName>
-    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
     <IISExpressSSLPort />
@@ -25,6 +25,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -256,6 +257,7 @@
     <Content Include="Scripts\WebForms\WebForms.js" />
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
+    <Content Include="Security\SecurityAdmin.aspx" />
     <Content Include="Site.Master" />
     <Content Include="UserControls\MessageUserControl.ascx" />
     <Content Include="ViewSwitcher.ascx" />
@@ -449,6 +451,15 @@
     <Compile Include="SamplePages\SimpleRepeater.aspx.designer.cs">
       <DependentUpon>SimpleRepeater.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Security\SecurityAdmin.aspx.cs">
+      <DependentUpon>SecurityAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Security\SecurityAdmin.aspx.designer.cs">
+      <DependentUpon>SecurityAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Security\SecurityController.cs" />
+    <Compile Include="Security\SecurityDbContextInitializer.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

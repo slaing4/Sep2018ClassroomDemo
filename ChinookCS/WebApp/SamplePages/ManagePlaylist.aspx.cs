@@ -8,6 +8,7 @@ using System.Web.UI.WebControls;
 #region Additonal Namespaces
 using ChinookSystem.BLL;
 using Chinook.Data.POCOs;
+using WebApp.Security;
 #endregion
 
 namespace Jan2018DemoWebsite.SamplePages
@@ -17,6 +18,27 @@ namespace Jan2018DemoWebsite.SamplePages
         protected void Page_Load(object sender, EventArgs e)
         {
             TracksSelectionList.DataSource = null;
+            if (Request.IsAuthenticated)
+            {
+                if (User.IsInRole("Administrators") ||
+                    User.IsInRole("Customers"))
+                {
+                    SecurityController sysmgr = new SecurityController();
+                    int? customerid = sysmgr.GetCurrentUserCustomerId(User.Identity.Name);
+                  
+                }
+                else
+                {
+                    //redirect ot a page that states no authorization for the requested action
+                    Response.Redirect("~/Default.aspx");
+
+                }
+            }
+            else
+            {
+                //redieect to login page
+                Response.Redirect("~/Account/Login.aspx");
+            }
         }
 
         protected void CheckForException(object sender, ObjectDataSourceStatusEventArgs e)
@@ -89,7 +111,7 @@ namespace Jan2018DemoWebsite.SamplePages
                 //collect the needed data
                 string playlistname = PlaylistName.Text;
                 //string username = User.Identity.Name; //comes from security
-                string username = "HansenB";
+                string username = User.Identity.Name; // "HansenB";
                 MessageUserControl.TryRun(() =>
                 {
                     PlaylistTracksController sysmgr = new PlaylistTracksController();
